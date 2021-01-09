@@ -33,15 +33,16 @@ jobs:
 
       - name: Upload deb package to Bintray
         uses: bpicode/github-action-upload-bintray@master
+        environment: default
         with:
           file: ./artifacts.zip
           api_user: anrodrig
-          api_key: ${{ secrets.BINTRAY_API_KEY }} # An API key can be obtained from the user profile page.
+          api_key: ${{ secrets.BINTRAY_API_KEY }}
           repository_user: anrodrig
           repository: test1
           package: test1
           version: ${{ steps.create_release.outputs.current_tag }}
-          upload_path: artifacts.zip
+          upload_path: artifacts-${{ steps.create_release.outputs.current_tag }}.zip
           publish: 1
           calculate_metadata: true # Schedule metadata calculation after upload
         
