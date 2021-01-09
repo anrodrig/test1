@@ -33,7 +33,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Upload package to Bintray
-        uses: bpicode/github-action-upload-bintray@master
+        uses: bpicode/github-action-upload-bintray@7c33b56d01c41301a3346f2fd9af590cb1c81899
         with:
           file: ./artifacts.zip
           api_user: anrodrig
