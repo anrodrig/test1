@@ -9,6 +9,7 @@ jobs:
   build:
     name: Create Release
     runs-on: ubuntu-latest
+    environment: default
     steps:
       - uses: actions/checkout@v2
       - name: make
@@ -33,7 +34,6 @@ jobs:
 
       - name: Upload deb package to Bintray
         uses: bpicode/github-action-upload-bintray@master
-        environment: default
         with:
           file: ./artifacts.zip
           api_user: anrodrig
